@@ -1,0 +1,284 @@
+
+
+<% if @insurance == nil%>
+
+<div class="jumbotron">
+  <h1 class="display-4">Warning: ssn or insurance id don't exist</h1>
+  <p class="lead">Please check the insurance id !</p>
+  <%= link_to 'Patient home', patients_path, class:"btn btn-dark btn-lg" %>
+  <%= link_to 'Insurance home', insurances_path, class:"btn btn-dark btn-lg" %>
+</div>
+
+<% elsif %>
+
+<%p_name = @patient.fname + " " + @patient.lname%>
+<%i_name = @insurance.insured_name %>
+<%p_birth = @patient.date_of_birth %>
+<%i_birth = @insurance.insured_birth %>
+<%p_ssn = @patient.ssn %>
+<%i_ssn = @insurance.insured_ssn %>
+<%p_id = @patient.insurId %>
+<%i_id = @insurance.insurance_id %>
+<%start_time = @insurance.insurance_start_date %>
+<%end_time = @insurance.insurance_end_date %>
+<%today = Date.today %>
+<%different1 = today-start_time %>
+<%different2 = end_time - today %>
+<%flag1 = different1>=0 && different2>=0 %>
+<%flag2 = p_name == i_name && p_birth == i_birth && p_ssn == i_ssn && p_id == i_id %>
+
+<% if flag1 && flag2 %>
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Insurance is valid!</h4>
+  <p class="mb-0">Ready to go!</p>
+</div>
+
+<% elsif !flag1 && flag2%>
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Insurance is invalid!</h4>
+  <p class="mb-0">The start date is after today or the end day is before today, please check the insurance again!</p>
+</div>
+
+<% elsif flag1 && !flag2%>
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Insurance is invalid</h4>
+  <p class="mb-0">Patient information is not identical, please check the personal information!</p>
+</div>
+
+<% elsif !flag1 && !flag2%>
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Insurance is invalid!</h4>
+  <p class="mb-0">Information is not identical and insurance is not valid!</p>
+</div>
+<% end %>
+
+
+
+
+
+
+<div class="jumbotron">
+  <h1 class="display-6">Personal Information</h1>
+
+<% if p_name == i_name %>
+    <p>
+    <strong>Name:</strong>
+    <%=p_name %>
+    </p>
+<% else %>
+    <div class="alert alert-danger" role="alert">
+    <h5 class="alert-heading" style='color: red'>warning : name not identical!</h5>
+    <p>
+        <strong>Name:</strong>
+        <%=p_name %>
+        </p>
+    </div>
+<% end %>
+
+    <p>
+    <strong>Gender:</strong>
+    <%= @patient.gender %>
+    </p>
+
+<% if p_birth == i_birth %>
+    <p>
+        <strong>Date of birth:</strong>
+        <%= p_birth %>
+    </p>
+<% else %>
+    <div class="alert alert-danger" role="alert">
+        <h5 class="alert-heading" style='color: red'>warning : date of birth not identical!</h5>
+        <p>
+            <strong>Date of birth:</strong>
+            <%= p_birth %>
+        </p>
+    </div>
+<% end %>
+
+<% if p_ssn == i_ssn %>
+    <p>
+        <strong>SSN:</strong>
+        <%= p_ssn %>
+    </p>
+<% else %>
+    <div class="alert alert-danger" role="alert">
+        <h5 class="alert-heading" style='color: red'>warning : ssn not identical!</h5>
+        <p>
+            <strong>SSN:</strong>
+            <%= p_ssn %>
+        </p>
+    </div>
+<% end %>
+
+    <p>
+    <strong>Phone:</strong>
+    <%= @patient.phone %>
+    </p>
+
+    <p>
+    <strong>Email:</strong>
+    <%= @patient.email %>
+    </p>
+
+    <p>
+    <strong>Address</strong>
+    <%= @patient.address_line_1 %>, <%= @patient.address_line_2 %>, <%= @patient.city %>, <%= @patient.state %> <%= @patient.zip %>
+    </p>
+
+<% if p_id == i_id %>
+    <p>
+        <strong>Insurance-id:</strong>
+        <%= p_id %>
+    </p>
+<% else %>
+    <div class="alert alert-danger" role="alert">
+        <h5 class="alert-heading" style='color: red'>warning : insurance not identical!</h5>
+        <p>
+            <strong>Insurance-id:</strong>
+            <%= p_id %>
+        </p>
+    </div>
+<% end %>
+
+<hr/>
+
+
+
+
+
+
+<h1 class="display-6">Insurance Information</h1>
+
+<% if p_id == i_id %>
+    <p>
+        <strong>Insurance Id:</strong>
+        <%= i_id %>
+    </p>
+<% else %>
+    <div class="alert alert-warning" role="alert">
+        <h5 class="alert-heading" style='color: red'>warning : insurance id not identical!</h5>
+        <p>
+            <strong>Insurance-id:</strong>
+            <%= i_id %>
+        </p>
+    </div>
+<% end %>
+
+<% if p_name == i_name %>
+    <p>
+    <strong>Insured name:</strong>
+    <%= @insurance.insured_name %>
+    
+    </p>
+<% else %>
+    <div class="alert alert-warning" role="alert">
+        <h5 class="alert-heading" style="color: red">warning : name not identical!</h5>
+        <p>
+            <strong>Name:</strong> <%=i_name%>
+        </p>
+    </div>
+<% end %>
+
+<% if p_birth == i_birth %>
+    <p>
+        <strong>Insured birth:</strong>
+        <%= i_birth %>
+    </p>
+<% else %>
+    <div class="alert alert-warning" role="alert">
+        <h5 class="alert-heading" style='color: red'>warning : date of birth not identical!</h5>
+        <p>
+            <strong>Insured birth:</strong>
+            <%= i_birth %>
+        </p>
+    </div>
+<% end %>
+
+<% if p_ssn == i_ssn %>
+    <p>
+        <strong>Insured ssn:</strong>
+        <%= i_ssn %>
+    </p>
+<% else %>
+    <div class="alert alert-warning" role="alert">
+        <h5 class="alert-heading" style='color: red'>warning : ssn not identical!</h5>
+        <p>
+            <strong>Insured ssn:</strong>
+            <%= i_ssn %>
+        </p>
+    </div>
+<% end %>
+
+    <p>
+    <strong>Insurance start date:</strong>
+    <%= @insurance.insurance_start_date %>
+    </p>
+
+    <p>
+    <strong>Insurance end date:</strong>
+    <%= @insurance.insurance_end_date %>
+    </p>
+
+    <p>
+    <strong>Insurance limitation:</strong>
+    <%= @insurance.insurance_limitation %>
+    </p>
+
+    <p>
+    <strong>Insurance deductible:</strong>
+    <%= @insurance.insurance_deductible %>
+    </p>
+
+    <p>
+    <strong>Insurance copay rate:</strong>
+    <%= @insurance.insurance_copay_rate %>
+    </p>
+
+    <p>
+    <strong>Insurance company name:</strong>
+    <%= @insurance.insurance_company_name %>
+    </p>
+
+    <p>
+    <strong>Insurance company address:</strong>
+    <%= @insurance.insurance_company_address %>
+    </p>
+
+    <p>
+    <strong>Insurance company phone:</strong>
+    <%= @insurance.insurance_company_phone %>
+    </p>
+
+    <p>
+    <strong>Insurance company email:</strong>
+    <%= @insurance.insurance_company_email %>
+    </p>
+
+    <p>
+    <strong>Insurance company website:</strong>
+    <%= @insurance.insurance_company_website %>
+    </p>
+
+    <div class="card">
+        <div class="card-header">
+            <h1>Go back<h1>
+        </div>
+        <div class="card-body">
+            <%= link_to 'Back', checks_check_path(ssn: @patient.ssn, insurId: @patient.insurId), class:"btn btn-dark btn-lg" %>
+
+            <%= link_to 'Show patient', patient_path(id: @patient.id), class:"btn btn-dark btn-lg" %>
+            
+            <%= link_to 'Patient home', patients_path, class:"btn btn-dark btn-lg" %>
+            
+            <%= link_to 'Insurance home', insurances_path, class:"btn btn-dark btn-lg" %>
+        </div>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+

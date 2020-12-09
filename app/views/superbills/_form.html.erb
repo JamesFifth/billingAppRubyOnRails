@@ -1,0 +1,27 @@
+<%= form_with(model: superbill, local: true) do |form| %>
+  <% if superbill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(superbill.errors.count, "error") %> prohibited this superbill from being saved:</h2>
+
+      <ul>
+        <% superbill.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :superbill_id %>
+    <%= form.number_field :superbill_id, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :patient_id %>
+    <%= form.number_field :patient_id, class:"form-control" %>
+  </div>
+
+  <div class="actions form-group">
+    <%= form.submit %>
+  </div>
+<% end %>

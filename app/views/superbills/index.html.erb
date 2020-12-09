@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Superbills</h1>
+
+<table  class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Superbill</th>
+      <th>Patient</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @superbills.each do |superbill| %>
+      <tr>
+        <td><%= superbill.superbill_id %></td>
+        <td><%= superbill.patient_id %></td>
+        <td><%= link_to 'Show', superbill %></td>
+        <td><%= link_to 'Edit', edit_superbill_path(superbill) %></td>
+        <td><%= link_to 'Destroy', superbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Superbill', new_superbill_path %>

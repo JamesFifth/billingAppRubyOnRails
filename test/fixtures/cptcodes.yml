@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cpt_code: MyString
+  cpt_description: MyString
+  cpt_price: MyString
+
+two:
+  cpt_code: MyString
+  cpt_description: MyString
+  cpt_price: MyString

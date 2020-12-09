@@ -1,0 +1,43 @@
+
+<p>
+  <strong>Bill:</strong>
+  <%= @bill.id %>
+</p>
+
+<p>
+  <strong>Bill date:</strong>
+  <%= @bill.bill_date %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @bill.patient_id %>
+</p>
+
+<p>
+  <strong>Diagnosis code:</strong>
+  <%= @bill.diagnosis_code %>
+</p>
+
+<p>
+  <strong>Code codes:</strong>
+  <%= @bill.cpt_code %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= @bill.total_price %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @bill.is_paid %>
+</p>
+
+<p>
+  <strong>Insurrance:</strong>
+  <%= @bill.insurrance_id %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>

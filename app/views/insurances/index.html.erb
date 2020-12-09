@@ -1,0 +1,57 @@
+
+<% if @insurances %>
+
+<h1><%= link_to 'Search Insurances', insurances_path %></h1>
+
+<%= form_for "", url: insurances_path, role: 'search', method: :get do %>
+  <%= text_field_tag(:filter_ssn, @filter_by_ssn, options = {:size => "134", :placeholder => "Search by Name or SSN or InsuranceID"})%>
+<% end %>
+
+
+
+<br/>
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>InsuranceID</th>
+        <th>Insurer</th>
+        <th>Birth</th>
+        <th>SSN</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Limitation</th>
+        <th>Deductible</th>
+        <th>Copay</th>
+        <th>Company</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @insurances.each do |insurance| %>
+        <tr>
+          <td><%= link_to insurance.insurance_id, insurance %></td>
+          <td><%= insurance.insured_name %></td>
+          <td><%= insurance.insured_birth %></td>
+          <td><%= insurance.insured_ssn %></td>
+          <td><%= insurance.insurance_start_date %></td>
+          <td><%= insurance.insurance_end_date %></td>
+          <td><%= insurance.insurance_limitation %></td>
+          <td><%= insurance.insurance_deductible %></td>
+          <td><%= insurance.insurance_copay_rate %></td>
+          <td><%= insurance.insurance_company_name %></td>
+          <td><%= link_to 'Destroy', insurance, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Insurance', new_insurance_path, class: "btn btn-outline-primary btn-sm"  %>
+
+<% elsif @findinsurancesssn != nil %>
+@findinsurancesssn
+<% elsif @findinsurancesid != nil %>
+@findinsurancesid
+<% else %>
+  <h1>No such patient !</h1>
+<% end %>

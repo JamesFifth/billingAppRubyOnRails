@@ -1,0 +1,52 @@
+<%= form_with(model: provider, local: true) do |form| %>
+  <% if provider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
+
+      <ul>
+        <% provider.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :provider_name %>
+    <%= form.text_field :provider_name, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :provider_email %>
+    <%= form.text_field :provider_email, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :tax_id %>
+    <%= form.text_field :tax_id, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :provider_licence %>
+    <%= form.text_field :provider_licence, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :provider_address %>
+    <%= form.text_field :provider_address, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :NPI %>
+    <%= form.number_field :NPI, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-outline-primary btn-sm" %>
+  </div>
+<% end %>

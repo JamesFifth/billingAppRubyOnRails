@@ -1,0 +1,17 @@
+
+<h1 class="display-4">Generate superbill</h1>
+<br/>
+
+<div class="card">
+  <div class="card-header">
+    <h2>Bill information</h2>
+  </div>
+  <div class="card-body">
+    <%= render 'form', bill: @bill %>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+  <%= link_to 'Back', patients_path(:ssn => params[:ssn]), class: "btn btn-dark btn-lg" %>
+  </div>
+</div>

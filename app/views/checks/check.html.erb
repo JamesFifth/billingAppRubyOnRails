@@ -1,0 +1,10 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">Check insurance</h1>
+  <hr class="my-4">
+  <p class="lead">Here you can check patient's healthy insurance by his/her date of birth, social security number or insurance id </p>
+  <br/>
+  <%= link_to 'Back', patients_path(:ssn => params[:ssn]), class: "btn btn-dark btn-lg" %>
+  <%= link_to 'Check by ssn', insurances_path(:ssn => params[:ssn]), class: "btn btn-dark btn-lg" %>
+  <%= link_to 'Check by id', insurances_path(:insurId => params[:insurId]), class: "btn btn-dark btn-lg" %>
+</div>

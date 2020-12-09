@@ -1,0 +1,47 @@
+
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @provider.provider_name %></h1>
+  <p class="lead">This is a brief billing information about <%= @provider.provider_name %></p>
+  <hr class="my-4">
+  
+  <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Provider name:</strong>
+  <%= @provider.provider_name %>
+</p>
+
+<p>
+  <strong>Provider email:</strong>
+  <%= @provider.provider_email %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @provider.tax_id %>
+</p>
+
+<p>
+  <strong>Provider licence:</strong>
+  <%= @provider.provider_licence %>
+</p>
+
+<p>
+  <strong>Provider address:</strong>
+  <%= @provider.provider_address %>
+</p>
+
+<p>
+  <strong>Npi:</strong>
+  <%= @provider.NPI %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @provider.phone %>
+</p>
+
+<%= link_to 'Edit', edit_provider_path(@provider) %> |
+<%= link_to 'Back', providers_path %>
+</div>

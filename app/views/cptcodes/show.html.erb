@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron">
+  <h1 class="display-4">CPT code details</h1>
+  <hr class="my-4">
+  <p>
+  <strong>Cpt code:</strong>
+  <%= @cptcode.cpt_code %>
+</p>
+
+<p>
+  <strong>Cpt description:</strong>
+  <%= @cptcode.cpt_description %>
+</p>
+
+<p>
+  <strong>Cpt price:</strong>
+  <%= @cptcode.cpt_price %>
+</p>
+
+<%= link_to 'Back', cptcodes_path %>
+</div>
+
+

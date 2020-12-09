@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron">
+  <h1 class="display-4">ICD Code details</h1>
+  <hr class="my-4">
+  <p>
+  <strong>Category code:</strong>
+  <%= @icdcode.category_code %>
+</p>
+
+<p>
+  <strong>Diagnosis code:</strong>
+  <%= @icdcode.diagnosis_code %>
+</p>
+
+<p>
+  <strong>Full code:</strong>
+  <%= @icdcode.FULL_CODE %>
+</p>
+
+<p>
+  <strong>Abbreviated description:</strong>
+  <%= @icdcode.abbreviated_description %>
+</p>
+
+<p>
+  <strong>Full description:</strong>
+  <%= @icdcode.full_description %>
+</p>
+
+<p>
+  <strong>Category title:</strong>
+  <%= @icdcode.category_title %>
+</p>
+
+<%= link_to 'Back', icdcodes_path %>
+</div>
+
+

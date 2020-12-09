@@ -1,0 +1,80 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Insurance Id : <%= @insurance.insurance_id %></h1>
+    <div class="card-body">
+      
+<p>
+  <strong>Insurance Id :</strong>
+  <%= @insurance.insurance_id %>
+</p>
+
+<p>
+  <strong>Insured name:</strong>
+  <%= @insurance.insured_name %>
+</p>
+
+<p>
+  <strong>Insured birth:</strong>
+  <%= @insurance.insured_birth %>
+</p>
+
+<p>
+  <strong>Insured ssn:</strong>
+  <%= @insurance.insured_ssn %>
+</p>
+
+<p>
+  <strong>Insurance start date:</strong>
+  <%= @insurance.insurance_start_date %>
+</p>
+
+<p>
+  <strong>Insurance end date:</strong>
+  <%= @insurance.insurance_end_date %>
+</p>
+
+<p>
+  <strong>Insurance limitation:</strong>
+  <%= @insurance.insurance_limitation %>
+</p>
+
+<p>
+  <strong>Insurance deductible:</strong>
+  <%= @insurance.insurance_deductible %>
+</p>
+
+<p>
+  <strong>Insurance copay rate:</strong>
+  <%= @insurance.insurance_copay_rate %>
+</p>
+
+<p>
+  <strong>Insurance company name:</strong>
+  <%= @insurance.insurance_company_name %>
+</p>
+
+<p>
+  <strong>Insurance company address:</strong>
+  <%= @insurance.insurance_company_address %>
+</p>
+
+<p>
+  <strong>Insurance company phone:</strong>
+  <%= @insurance.insurance_company_phone %>
+</p>
+
+<p>
+  <strong>Insurance company email:</strong>
+  <%= @insurance.insurance_company_email %>
+</p>
+
+<p>
+  <strong>Insurance company website:</strong>
+  <%= @insurance.insurance_company_website %>
+</p>
+
+<%= link_to 'Edit', edit_insurance_path(@insurance) %> |
+<%= link_to 'Back', insurances_path %>
+  </div>
+</div>

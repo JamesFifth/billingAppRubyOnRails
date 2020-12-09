@@ -1,0 +1,2 @@
+class Superbill < ApplicationRecord
+end

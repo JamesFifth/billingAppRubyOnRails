@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_code: MyString
+  diagnosis_code: MyString
+  FULL_CODE: MyString
+  abbreviated_description: MyString
+  full_description: MyString
+  category_title: MyString
+
+two:
+  category_code: MyString
+  diagnosis_code: MyString
+  FULL_CODE: MyString
+  abbreviated_description: MyString
+  full_description: MyString
+  category_title: MyString

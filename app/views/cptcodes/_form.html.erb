@@ -1,0 +1,32 @@
+<%= form_with(model: cptcode, local: true) do |form| %>
+  <% if cptcode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cptcode.errors.count, "error") %> prohibited this cptcode from being saved:</h2>
+
+      <ul>
+        <% cptcode.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :cpt_code %>
+    <%= form.text_field :cpt_code, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :cpt_description %>
+    <%= form.text_field :cpt_description, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :cpt_price %>
+    <%= form.text_field :cpt_price, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-outline-primary btn-sm" %>
+  </div>
+<% end %>

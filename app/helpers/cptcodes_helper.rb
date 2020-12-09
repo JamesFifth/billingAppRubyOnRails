@@ -1,0 +1,2 @@
+module CptcodesHelper
+end

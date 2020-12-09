@@ -1,0 +1,201 @@
+<div class="jumbotron">
+<h1 class="display-4">Superbill for <%= @patient.fname %> <%= @patient.lname %></h1>
+<hr>
+<h2 class="display-5">Patient information</h2>
+<hr>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.fname %> <%= @patient.lname %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @patient.gender %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @patient.date_of_birth %>
+</p>
+
+<p>
+  <strong>Ssn:</strong>
+  <%= @patient.ssn %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @patient.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @patient.email %>
+</p>
+
+<p>
+  <strong>Address</strong>
+  <%= @patient.address_line_1 %>, <%= @patient.address_line_2 %>, <%= @patient.city %>, <%= @patient.state %> <%= @patient.zip %>
+</p>
+
+<h2 class="display-5">Insurance information</h2>
+<hr>
+
+<p>
+  <strong>Insurance-id:</strong>
+  <%= @patient.insurId %>
+</p>
+
+<p>
+  <strong>Insurance Id :</strong>
+  <%= @insurance.insurance_id %>
+</p>
+
+<p>
+  <strong>Insured name:</strong>
+  <%= @insurance.insured_name %>
+</p>
+
+<p>
+  <strong>Insured birth:</strong>
+  <%= @insurance.insured_birth %>
+</p>
+
+<p>
+  <strong>Insured ssn:</strong>
+  <%= @insurance.insured_ssn %>
+</p>
+
+<p>
+  <strong>Insurance start date:</strong>
+  <%= @insurance.insurance_start_date %>
+</p>
+
+<p>
+  <strong>Insurance end date:</strong>
+  <%= @insurance.insurance_end_date %>
+</p>
+
+<p>
+  <strong>Insurance limitation:</strong>
+  <%= @insurance.insurance_limitation %>
+</p>
+
+<p>
+  <strong>Insurance deductible:</strong>
+  <%= @insurance.insurance_deductible %>
+</p>
+
+<p>
+  <strong>Insurance copay rate:</strong>
+  <%= @insurance.insurance_copay_rate %>
+</p>
+
+<p>
+  <strong>Insurance company name:</strong>
+  <%= @insurance.insurance_company_name %>
+</p>
+
+<p>
+  <strong>Insurance company address:</strong>
+  <%= @insurance.insurance_company_address %>
+</p>
+
+<p>
+  <strong>Insurance company phone:</strong>
+  <%= @insurance.insurance_company_phone %>
+</p>
+
+<p>
+  <strong>Insurance company email:</strong>
+  <%= @insurance.insurance_company_email %>
+</p>
+
+<p>
+  <strong>Insurance company website:</strong>
+  <%= @insurance.insurance_company_website %>
+</p>
+
+<h2 class="display-5">Billing information</h2>
+<hr>
+
+<p>
+  <strong>Bill:</strong>
+  <%= @bill.id %>
+</p>
+
+<p>
+  <strong>Bill date:</strong>
+  <%= @bill.bill_date %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @bill.patient_id %>
+</p>
+
+<p>
+  <strong>Diagnosis code:</strong>
+  <%= @bill.diagnosis_code %>
+</p>
+
+<p>
+  <strong>Code codes:</strong>
+  <%= @bill.cpt_code %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= @bill.total_price %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @bill.is_paid %>
+</p>
+
+<p>
+  <strong>Insurrance:</strong>
+  <%= @bill.insurrance_id %>
+</p>
+
+<h2 class="display-5">Provider information</h2>
+<hr>
+
+<p>
+  <strong>Provider name:</strong>
+  <%= @provider.provider_name %>
+</p>
+
+<p>
+  <strong>Provider email:</strong>
+  <%= @provider.provider_email %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @provider.tax_id %>
+</p>
+
+<p>
+  <strong>Provider licence:</strong>
+  <%= @provider.provider_licence %>
+</p>
+
+<p>
+  <strong>Provider address:</strong>
+  <%= @provider.provider_address %>
+</p>
+
+<p>
+  <strong>Npi:</strong>
+  <%= @provider.NPI %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @provider.phone %>
+</p>
+
+</div>

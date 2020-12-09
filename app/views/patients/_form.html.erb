@@ -1,0 +1,70 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+        <% patient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :fname, placeholder: "first name", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :lname, placeholder: "last name", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :gender, placeholder: "gender", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :date_of_birth %>
+    <%= form.date_select :date_of_birth, :start_year => 1900, :end_year => 2020, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :ssn, placeholder: "social security number", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :phone, placeholder: "phone number", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :email, placeholder: "email address", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :address_line_1, placeholder: "address line 1", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :address_line_2, placeholder: "address line 2", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :city, placeholder: "city", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :state, placeholder: "state", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :zip, placeholder: "zip", class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :insurId, placeholder: "insurance id number", class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-outline-primary btn-sm" %>
+  </div>
+<% end %>

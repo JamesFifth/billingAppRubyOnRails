@@ -1,0 +1,52 @@
+<%= form_with(model: bill, local: true) do |form| %>
+  <% if bill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+      <ul>
+        <% bill.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :bill_date %>
+    <%= form.date_select :bill_date, value: Date.today, :start_year => 1900, :end_year => 2025, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :patient_id %>
+    <%= form.number_field :patient_id, value: @bill.patient_id, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :diagnosis_code %>
+    <%= form.text_field :diagnosis_code, value: @bill.diagnosis_code, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :cpt_code %>
+    <%= form.text_field :cpt_code, value: @bill.cpt_code, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :total_price %>
+    <%= form.number_field :total_price, value: @bill.total_price, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :is_paid %>
+    <%= form.check_box :is_paid, value: @bill.is_paid %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :insurrance_id %>
+    <%= form.text_field :insurrance_id, value: @bill.insurrance_id, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-outline-primary btn-sm"%>
+  </div>
+<% end %>
