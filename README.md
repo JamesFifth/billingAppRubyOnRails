@@ -8,9 +8,7 @@ Obasuyi Edokpolor : Project manager
 
 koko nestor Afantchao : scrum master
 
-Ming Wu : Team Lead
-
-Matthew Kehoe : Developer
+Ming Wu : Team Lead && Developer
 
 ## Ruby version
 
@@ -35,10 +33,6 @@ Matthew Kehoe : Developer
         3. rails server
 
         4. visit localhost://3000
-
-## Pictures of app
-
-## Live Demo of app
 
 ## Product Vision
 
