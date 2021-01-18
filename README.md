@@ -10,6 +10,8 @@ koko nestor Afantchao : scrum master
 
 Ming Wu : Team Lead && Developer
 
+Matthew Kehoe : Developer
+
 ## Ruby version
 
         Ruby '2.6.6'
